@@ -1,0 +1,50 @@
+<ion-view view-title="Register">
+  <ion-content class="padding-top">
+    <div class="text-center padding-top">
+      <i class="icon ion-android-person-add larger positive"></i>
+    </div>
+    <form name="registerForm" novalidate ng-submit="registerForm.$valid && register(user)"
+    ng-class="{ 'has-error' : registerForm.txtemail.$invalid && registerForm.$submitted }">
+    <div class="list">
+        <label class="item item-input item-floating-label">
+        <span class="input-label">Name</span>
+        <input name="txtname" type="text" ng-model="user.name" placeholder="Name" required>
+        </label>
+        <div class="form-errors" ng-messages="registerForm.txtname.$error" ng-if="registerForm.$submitted">
+            <div class="form-error" ng-message="required">This field cannot be left blank</div>
+        </div>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Email</span>
+        <input name="txtemail" type="email" ng-model="user.email" placeholder="Email"
+        ng-minlength="5"
+        ng-maxlength="30"
+        required>
+      </label>
+      <div class="form-errors" ng-messages="registerForm.txtemail.$error" ng-if="registerForm.$submitted">
+        <div class="form-error" ng-message="required">This field cannot be left blank</div>
+        <div class="form-error" ng-message="email">This field is must be an email.</div>
+        <div class="form-error" ng-message="maxlength">This email is too long</div>
+      </div>
+        <label class="item item-input item-floating-label" ng-class="{ 'has-error-lr' : registerForm.txtpassword.$invalid  && registerForm.$submitted}">
+        <span class="input-label">Password</span>
+        <input name="txtpassword" type="password" ng-model="user.password" placeholder="Password"
+        ng-minlength="5"
+        ng-maxlength="25"
+        required>
+      </label>
+      <div class="form-errors" ng-messages="registerForm.txtpassword.$error" ng-if="registerForm.$submitted">
+        <div class="form-error" ng-message="required">This field cannot be left blank</div>
+        <div class="form-error" ng-message="minlength">This password is too short</div>
+        <div class="form-error" ng-message="maxlength">This password is too long</div>
+        <div class="form-error" ng-message="pattern">You may only type numbers and letters</div>
+      </div>
+      <span class="input-label">Account Type</span>
+      <input name="btntype" type="radio" ng-model="user.type" value="parent">Parent<br>
+      <input name="btntype" type="radio" ng-model="user.type" value="child">Child
+  </div>
+    <div class="padding-top">
+      <input type="submit" value="Register" class="button button-block button-positive"/>
+    </div>
+  </form>
+  </ion-content>
+</ion-view>
