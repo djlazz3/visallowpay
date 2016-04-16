@@ -7,7 +7,6 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
 		user: {},
 
     createProfile: function(uid, user) {
-		console.log(user);
 	  var profile = {
 				id: uid,
         email: user.email,
@@ -15,15 +14,11 @@ angular.module('App').factory('Auth', function(FURL, $firebaseAuth, $firebaseArr
 		type: user.type,
         gravatar: get_gravatar(user.email, 40),
 				registered_in: Date()
-
       };
 
-      var profileRef = $firebaseArray(ref.child('profile'));
-      return profileRef.$add(profile).then(function(ref) {
-			  var id = ref.key();
-			  //console.log("added record with id " + id);
-			  profileRef.$indexFor(id); // returns location in the array
-			});
+	  var profileRef = ref.child('profile');
+ 		return profileRef.child(uid).set(profile);
+
     },
 
     login: function(user) {
