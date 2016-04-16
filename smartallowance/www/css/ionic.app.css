@@ -2953,6 +2953,10 @@ a.subdued {
   position: absolute;
   left: 16px; }
 
+.piggy-icon {
+    width: 25%;
+ }
+
 .action-sheet-title {
   padding: 16px;
   color: #8f8f8f;
@@ -3195,7 +3199,7 @@ a.subdued {
       font-size: 20px;
       line-height: 32px; }
     .bar .button.button-icon {
-      font-size: 17px; }
+      font-size: 10px; }
       .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
         vertical-align: top;
         font-size: 32px;
@@ -5816,6 +5820,12 @@ input, button, select, textarea {
       top: 0;
       -webkit-transition: opacity .15s ease-in, top .2s linear;
       transition: opacity .15s ease-in, top .2s linear; }
+
+      .account-type-div {
+        padding: 10px;
+        margin: 20px;
+        border: ridge 1px;
+      }
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   display: block;
