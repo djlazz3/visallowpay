@@ -1,7 +1,9 @@
 <ion-view view-title="Register">
   <ion-content class="padding-top">
     <div class="text-center padding-top">
-      <i class="icon ion-android-person-add larger positive"></i>
+      <a href="#/login.html">
+        <img src="../img/piggy main.png" class="icon piggy-icon ion-ios-game-controller-b larger positive"></img>
+      </a>
     </div>
     <form name="registerForm" novalidate ng-submit="registerForm.$valid && register(user)"
     ng-class="{ 'has-error' : registerForm.txtemail.$invalid && registerForm.$submitted }">
@@ -38,11 +40,19 @@
         <div class="form-error" ng-message="maxlength">This password is too long</div>
         <div class="form-error" ng-message="pattern">You may only type numbers and letters</div>
       </div>
-      <span class="input-label">Account Type</span>
-      <input name="btntype" type="radio" ng-model="user.type" value="parent">Parent<br>
-      <input name="btntype" type="radio" ng-model="user.type" value="child">Child
+      <div class="account-type-div">
+          <span class="item-floating-label">Account Type</span>
+          <fieldset>
+            <input name="btntype" type="radio" ng-model="user.type" value="parent" ng-required="!user.type">Parent</input>
+            </br>
+            <input name="btntype" type="radio" ng-model="user.type" value="child" ng-required="!user.type">Child</input>
+          </fieldset>
+          <div class="form-errors" ng-messages="registerForm.btntype.$error" ng-if="registerForm.$submitted">
+            <div class="form-error" ng-message="required">You must select an account type</div>
+          </div>
+      </div>
   </div>
-    <div class="padding-top">
+    <div class="padding-top item-floating-label">
       <input type="submit" value="Register" class="button button-block button-positive"/>
     </div>
   </form>
