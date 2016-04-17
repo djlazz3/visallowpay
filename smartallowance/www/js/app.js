@@ -32,7 +32,11 @@ $stateProvider
       templateUrl: 'views/reports/reports.html',
       controller:'reportsController'
     })
-    ;
+    .state('test', {
+      url: '/test',
+      templateUrl: 'views/test/test.html',
+      controller:'testController'
+      });
 $urlRouterProvider.otherwise("/login");
 })
 // Changue this for your Firebase App URL.
