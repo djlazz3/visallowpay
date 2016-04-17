@@ -22,6 +22,11 @@ $stateProvider
       templateUrl: 'views/home/home.html',
       controller:'homeController'
     })
+    .state('test', {
+      url: '/test',
+      templateUrl: 'views/test/test.html',
+      controller:'testController'
+      })
     ;
 $urlRouterProvider.otherwise("/login");
 })
