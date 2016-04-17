@@ -40,12 +40,15 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
       $location.path("/login");
   }
 
+  var randomAmount = parseFloat(Math.random() * (10000 - 100) + 100).toFixed(2);
+
   $scope.formData = {
         uid: userId,
         cardName: "",
         cardNumber: "",
         expirationDate: "",
-        CVV: ""
+        CVV: "",
+        amount: randomAmount
     };
 
   $scope.submitAddCardForm = function(formData) {
@@ -57,12 +60,15 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
      		//cardRef.child(uid).set(formData);
         cardRef.push(formData);
 
+        var randomAmount = parseFloat(Math.random() * (10000 - 100) + 100).toFixed(2);
+
         $scope.formData = {
               uid: userId,
               cardName: "",
               cardNumber: "",
               expirationDate: "",
-              CVV: ""
+              CVV: "",
+              amount: randomAmount
           };
 
     };
