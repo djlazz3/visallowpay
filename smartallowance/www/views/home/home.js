@@ -8,7 +8,7 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
 
   var cardRef = new Firebase(FURL + "/card");
 
-  var currentUsersCards = cardRef.orderByChild("uid").equalTo(userId);
+  //var currentUsersCards = cardRef.orderByChild("uid").equalTo(userId);
   cardRef.on('value', function (cardsSnapshot) {
     var cards = cardsSnapshot.val(),
     cardIds = Object.keys(cards);
