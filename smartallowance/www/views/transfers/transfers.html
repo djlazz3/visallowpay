@@ -5,112 +5,32 @@
 
           <!-- Pets Tab -->
           <ion-tab title="Home" icon="icon ion-home" href="#/home">
-            <ion-nav-view name="tab-dash"></ion-nav-view>
+
           </ion-tab>
 
 
           <!-- Adopt Tab -->
           <ion-tab title="Reports" icon="icon ion-heart" href="#/reports">
-            <ion-nav-view name="tab-friends"></ion-nav-view>
+
           </ion-tab>
 
 
           <!-- About Tab -->
           <ion-tab title="Transfers" icon="icon ion-gear-b" href="#/transfers">
-            <ion-nav-view name="tab-account"></ion-nav-view>
+
           </ion-tab>
 
 
         </ion-tabs>
     </ion-nav-view>
         <ion-content class="padding-top">
-          <h1>Welcome to Visa Allowance</h1>
+          <center><h1>Transfer Money To Another Card</h1></center>
+          <select onclick="selectHandler.action(this)" onblur="selectHandler.blur()">
+      <option value="value-1"> 1 </option>
+      <option value="value-2"> 2 </option>
+      <option value="value-3"> 3 </option>
+      <option value="value-4"> 4 </option>
+  </select>
 
-            <hr />
-
-
-            <ul ng-repeat="x in currentUserCards" class="storedCard" >
-              <h1>{{x.cardName}}</h1>
-              <li>
-                {{ x.uid }}
-              </li>
-              <li>
-                {{ x.CVV }}
-              </li>
-              <li>
-                {{ x.cardNumber }}
-              </li>
-              <li>
-                {{ x.expirationDate }}
-              </li>
-
-            </br>
-              <a id="deleteCardData"> Remove Card</a>
-
-            </ul>
-
-            <div class="addCardPayment">
-              <a href="#" ng-model="collapsed" ng-click="collapsed=!collapsed">
-                <img src="img/creditcard done.png" width="36px" height="25px">
-                <strong>Add Card</strong>
-              </a>
-
-          <div ng-show="collapsed">
-          <form name="addCardForm" ng-submit="addCardForm.$valid && submitAddCardForm(formData)">
-            <div class="list">
-
-              <label class="item item-input item-floating-label" ng-class="{ 'has-error' : addCardForm.txtemails.$invalid && addCardForm.$submitted }">
-                <span class="input-label">Card Name</span>
-                <input name="cardName" type="text" ng-model="formData.cardName" placeholder="Card Name"
-                ng-required>
-              </label>
-              <div class="form-errors" ng-messages="addCardForm.cardName.$error" ng-if="addCardForm.$submitted">
-                <div class="form-error" ng-message="required">This field is required.</div>
-              </div>
-
-              <label class="item item-input item-floating-label" ng-class="{ 'has-error' : addCardForm.cardNumber.$invalid && addCardForm.$submitted }">
-                <span class="input-label">Card Number</span>
-                <input name="cardNumber" type="text" ng-model="formData.cardNumber" placeholder="Card Number"
-                ng-required>
-              </label>
-              <div class="form-errors" ng-messages="addCardForm.cardNumber.$error" ng-if="addCardForm.$submitted">
-                <div class="form-error" ng-message="required">This field is required.</div>
-              </div>
-
-              <label class="item item-input item-floating-label" ng-class="{ 'has-error' : addCardForm.txtemail.$invalid && addCardForm.$submitted }">
-                <span class="input-label">Expiration Date</span>
-                <input name="expirationDate" type="text" ng-model="formData.expirationDate" placeholder="Expiration Date"
-                ng-required>
-              </label>
-              <div class="form-errors" ng-messages="addCardForm.expirationDate.$error" ng-if="addCardForm.$submitted">
-                <div class="form-error" ng-message="required">This field is required.</div>
-              </div>
-
-              <label class="item item-input item-floating-label" ng-class="{ 'has-error' : addCardForm.txtemail.$invalid && addCardForm.$submitted }">
-                <span class="input-label">CVV</span>
-                <input name="CVV" type="text" ng-model="formData.CVV" placeholder="CVV"
-                ng-minlength="3"
-                ng-maxlength="3"
-                ng-required>
-              </label>
-              <div class="form-errors" ng-messages="addCardForm.CVV.$error" ng-if="addCardForm.$submitted">
-                <div class="form-error" ng-message="required">This field is required.</div>
-                <div class="form-error" ng-message="minlength">This field is must be 3 characters.</div>
-                <div class="form-error" ng-message="maxlength">This field is must be 3 characters.</div>
-              </div>
-
-              <div class="padding-top">
-                <input type="submit" class="button button-block button-positive" value="Add Card">
-              </div>
-
-            </div>
-          </form>
-
-          </div>
-
-        </div>
-
-          <button ng-click="logOut()" class="button button-clear button-positive">Logout</button>
-        </ion-content>
 
 </ion-view>
