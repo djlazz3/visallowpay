@@ -1,0 +1,61 @@
+
+<ion-view view-title="Transfers" hide-back-button="true">
+    <ion-nav-view>
+        <ion-tabs class="tabs-icon-top">
+
+
+          <!-- Pets Tab -->
+          <ion-tab title="Home" icon="icon ion-home" href="#/home">
+
+          </ion-tab>
+
+
+          <!-- Adopt Tab -->
+          <ion-tab title="Reports" icon="icon ion-heart" href="#/reports">
+
+          </ion-tab>
+
+
+          <!-- About Tab -->
+          <ion-tab title="Transfers" icon="icon ion-gear-b" href="#/transfers">
+
+          </ion-tab>
+
+
+        </ion-tabs>
+    </ion-nav-view>
+        <ion-content class="padding-top"style="padding-top: 48px;">
+          <center><h1>Transfer Money To Another Card</h1></center>
+
+            <form name="transfersForm" ng-submit="transfersForm.$valid && submitAddCardForm(transferData)">
+
+            <ion-item>
+                <ion-label>Sending Card</ion-label>
+                    <select class="dropdown" ng-model="transferData.sender">
+                        <option ng-repeat="x in currentUserCards" value={{x.cardName}}>{{x.cardName}}</option>
+                    </select>
+            </ion-item>
+
+            <label class="item item-input item-floating-label" ng-class="{ 'has-error' : transfersForm.amount.$invalid && transfersForm.$submitted }">
+              <span class="input-label">Amount</span>
+              <p style="display: inline">$</p><input name="amount" style="display: inline" type="text" ng-model="transferData.amount" placeholder="Amount"
+              ng-required>
+            </label>
+            <div class="form-errors" ng-messages="transfersForm.amount.$error" ng-if="transfersForm.$submitted">
+              <div class="form-error" ng-message="required">This field is required.</div>
+            </div>
+
+            <ion-item>
+            <ion-label>Receiving Card</ion-label>
+            <select class="dropdown" ng-model="transferData.receiver">
+                <option ng-repeat="x in currentUserCards" value={{x.cardName}}>{{x.cardName}}</option>
+            </select>
+          </ion-item>
+
+          <div class="padding-top">
+            <input type="submit" class="button button-block button-positive" value="Transfer Funds" ng-click="submitTransfer(transferData)">
+          </div>
+
+        </form>
+
+</ion-view>

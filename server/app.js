@@ -36,6 +36,9 @@ app.get('/visa', function(req, res) {
 
 	var req = request.defaults();
 
+
+	var userId = 'KQP9K2SLD6UF62HU04UX21IDOTtWG2_uZAixdOKMTyQRWESmY' ;
+	var password = 'oMwyH72q18Qgnlk5lvp2gFl7vzoUWuNw7pMQ4K';
 	var userId = 'Q5T4Z2V436WKJG3UKSNU21TMeXAymJZxT1Qp1pwiMgkr9VP_c' ;
 	var password = 'poxBtBsbLr44EB8Pdiur9Buw9M62128nUO7';
 	var keyFile = './keys/key_Bryan.pem';

@@ -1,4 +1,7 @@
 {
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
   "name": "testserver",
   "version": "1.0.0",
   "description": "test server for visa api",

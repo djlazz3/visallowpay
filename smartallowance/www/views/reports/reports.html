@@ -1,0 +1,82 @@
+<ion-view view-title="Reports" hide-back-button="true">
+    <ion-nav-view>
+        <ion-tabs class="tabs-icon-top">
+
+
+          <!-- Pets Tab -->
+          <ion-tab title="Home" icon="icon ion-home" href="#/home">
+
+          </ion-tab>
+
+
+          <!-- Adopt Tab -->
+          <ion-tab title="Reports" icon="icon ion-ios-list-outline" href="#/reports">
+
+          </ion-tab>
+
+
+          <!-- About Tab -->
+          <ion-tab title="Transfers" icon="icon ion-arrow-swap" href="#/transfers">
+
+          </ion-tab>
+
+
+        </ion-tabs>
+    </ion-nav-view>
+
+        <ion-content class="padding-top" style="padding-top: 50px;">
+
+            <div class="addCardPayment">
+              <a href="#" ng-model="collapsed1" ng-click="collapsed1=!collapsed1">
+                <img src="img/creditcard done.png" width="36px" height="25px">
+                <strong>Overview</strong>
+              </a>
+
+          <div ng-show="collapsed1">
+
+              <div class="padding-top">
+                <center><img src="img/overview.png" height="438" width="258"></img></center>
+              </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="addCardPayment">
+          <a href="#" ng-model="collapsed2" ng-click="collapsed2=!collapsed2">
+            <img src="img/creditcard done.png" width="36px" height="25px">
+            <strong>Goals</strong>
+          </a>
+
+      <div ng-show="collapsed2">
+
+          <div class="padding-top">
+            <center><img src="img/Goals.png" height="447" width="325"></img></center>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="addCardPayment">
+      <a href="#" ng-model="collapsed3" ng-click="collapsed3=!collapsed3">
+        <img src="img/creditcard done.png" width="36px" height="25px">
+        <strong>Transaction Details</strong>
+      </a>
+
+  <div ng-show="collapsed3">
+
+      <div class="padding-top">
+          <center><img src="img/transactions.png" height="600" width="222"></img></center>
+      </div>
+
+
+</div>
+
+</div>
+
+
+          <button ng-click="logOut()" class="button button-clear button-positive">Logout</button>
+        </ion-content>
+
+</ion-view>

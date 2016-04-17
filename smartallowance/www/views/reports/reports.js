@@ -1,5 +1,5 @@
 'Use Strict';
-angular.module('App').controller('homeController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
+angular.module('App').controller('reportsController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
   var ref = new Firebase(FURL);
   console.log(ref.getAuth())
   var userId = ref.getAuth() != null ? ref.getAuth().uid : null;
@@ -8,7 +8,7 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
 
   var cardRef = new Firebase(FURL + "/card");
 
-  //var currentUsersCards = cardRef.orderByChild("uid").equalTo(userId);
+  var currentUsersCards = cardRef.orderByChild("uid").equalTo(userId);
   cardRef.on('value', function (cardsSnapshot) {
     var cards = cardsSnapshot.val(),
     cardIds = Object.keys(cards);
@@ -40,15 +40,12 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
       $location.path("/login");
   }
 
-  var randomAmount = parseFloat(Math.random() * (10000 - 100) + 100).toFixed(2);
-
   $scope.formData = {
         uid: userId,
         cardName: "",
         cardNumber: "",
         expirationDate: "",
-        CVV: "",
-        amount: randomAmount
+        CVV: ""
     };
 
   $scope.submitAddCardForm = function(formData) {
@@ -60,24 +57,15 @@ angular.module('App').controller('homeController', function ($scope, $state,$cor
      		//cardRef.child(uid).set(formData);
         cardRef.push(formData);
 
-        var randomAmount = parseFloat(Math.random() * (10000 - 100) + 100).toFixed(2);
-
         $scope.formData = {
               uid: userId,
               cardName: "",
               cardNumber: "",
               expirationDate: "",
-              CVV: "",
-              amount: randomAmount
+              CVV: ""
           };
 
     };
-
-
-}
-);
-
-angular.module('App').controller('addCardController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
 
 
 }
