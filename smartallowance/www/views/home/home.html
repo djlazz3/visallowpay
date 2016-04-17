@@ -26,7 +26,7 @@
 </ion-nav-view>
 
         <ion-content class="padding-top">
-          <h1>Welcome to Visa Allowance</h1>
+          <h1>Visa Allowance</h1>
 
             <hr />
 
@@ -34,17 +34,21 @@
             <ul ng-repeat="x in currentUserCards" class="storedCard" >
               <h1>{{x.cardName}}</h1>
               <li>
-                {{ x.uid }}
+                <strong> Card ID: </strong> {{ x.uid }}
               </li>
               <li>
-                {{ x.CVV }}
+                <strong> CVV: </strong> {{ x.CVV }}
               </li>
               <li>
-                {{ x.cardNumber }}
+                <strong> Card Number: </strong> {{ x.cardNumber }}
               </li>
               <li>
-                {{ x.expirationDate }}
+                <strong> Expiration Date: </strong> {{ x.expirationDate }}
               </li>
+              <li>
+                <strong> Amount: </strong> {{ x.amount }}
+              </li>
+
 
             </br>
               <a id="deleteCardData"> Remove Card</a>
