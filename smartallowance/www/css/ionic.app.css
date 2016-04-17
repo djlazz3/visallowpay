@@ -2808,6 +2808,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 h1, .h1, h2, .h2, h3, .h3 {
   margin-top: 20px;
+  margin-left: 20px;
   margin-bottom: 10px; }
   h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
     margin-top: 0; }
@@ -5822,6 +5823,22 @@ input, button, select, textarea {
       transition: opacity .15s ease-in, top .2s linear; }
 
       .account-type-div {
+        padding: 10px;
+        margin: 20px;
+        border: ridge 1px;
+      }
+
+      .addCardPayment {
+        padding: 10px;
+        margin: 20px;
+        border: ridge 1px;
+      }
+
+      #deleteCardData {
+        color: red;
+      }
+
+      .storedCard {
         padding: 10px;
         margin: 20px;
         border: ridge 1px;
