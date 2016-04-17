@@ -1,3 +1,4 @@
+
 <ion-view view-title="Transfers" hide-back-button="true">
     <ion-nav-view>
         <ion-tabs class="tabs-icon-top">
@@ -25,12 +26,21 @@
     </ion-nav-view>
         <ion-content class="padding-top">
           <center><h1>Transfer Money To Another Card</h1></center>
-      <ion-select
-        ng-model="my_array_used_to_iterate_through_items"
-        selected-text="'Selected text for label'"
-        multiple-select=true
-        animate="slide-in-up"
-       />
-
-
+            <ion-item>
+                <ion-label>Sending Card</ion-label>
+                    <select class="dropdown">
+                        <option ng-repeat="x in currentUserCards" value= {{x.cardId}}>{{x.cardName}}</option>
+                    </select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Amount $</ion-label>
+              <input></input>
+              <ion-label>USD</ion-label>
+            </ion-item>
+            <ion-item>
+            <ion-label>Receiving Card</ion-label>
+          <select class="dropdown">
+              <option ng-repeat="x in currentUserCards" value= {{x.cardId}}>{{x.cardName}}</option>
+          </select>
+          </ion-item>
 </ion-view>

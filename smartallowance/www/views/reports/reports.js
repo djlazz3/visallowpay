@@ -70,9 +70,3 @@ angular.module('App').controller('reportsController', function ($scope, $state,$
 
 }
 );
-
-angular.module('App').controller('addCardController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
-
-
-}
-);
