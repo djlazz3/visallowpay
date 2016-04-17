@@ -25,12 +25,12 @@
     </ion-nav-view>
         <ion-content class="padding-top">
           <center><h1>Transfer Money To Another Card</h1></center>
-          <select onclick="selectHandler.action(this)" onblur="selectHandler.blur()">
-      <option value="value-1"> 1 </option>
-      <option value="value-2"> 2 </option>
-      <option value="value-3"> 3 </option>
-      <option value="value-4"> 4 </option>
-  </select>
+      <ion-select
+        ng-model="my_array_used_to_iterate_through_items"
+        selected-text="'Selected text for label'"
+        multiple-select=true
+        animate="slide-in-up"
+       />
 
 
 </ion-view>
